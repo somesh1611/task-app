@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Contact Us : Taskmate</title>
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+    <br>
+        <h1 class="text-center">{{contact_text}}</h1>
+        <br>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card rounded shadow-sm">
+      
+      <div class="card-body">
+        <h5 class="card-title">Address</h5>
+        <p class="card-text">198 West 21th Street, Suite 721, New York NY 10016</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card rounded shadow-sm">
+      
+      <div class="card-body">
+        <h5 class="card-title">Phone</h5>
+        <a href="tel:18475555555"><p class="card-text">1-847-555-5555</p></a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card rounded shadow-sm">
+     
+      <div class="card-body">
+        <h5 class="card-title">E-Mail</h5>
+        <a  href="mailto:contact@test.com"><p class="card-text">contact@test.com</p></a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+{% endblock content %}

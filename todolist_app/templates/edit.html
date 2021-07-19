@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Edit Task : Taskmate</title>
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+    <br>
+    {% if task_obj.task_manager == request.user %}
+    
+        <form method='POST' class="row">
+            {% csrf_token %} 
+
+            <div class="col-lg-8">
+                <input type="text" class="form-control" placeholder="{{task_obj.task}}" name="task" value="{{task_obj.task}}">
+                
+                {% comment %} {% if task_obj.done %}
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="{{task_obj.done}}" checked>
+                    <label class="form-check-label">Done</label>
+                    </div>
+                
+                {% else %}
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="{{task_obj.done}}">
+                    <label class="form-check-label">Done</label>
+                    </div>
+
+                {% endif %} {% endcomment %}
+                
+                
+                <input type="hidden" name="done" value="{{task_obj.done}}">
+            </div>
+            
+            <div class="col-lg-2">
+            <button type="submit" class="btn btn-primary">Update Task</button>
+            </div>
+        
+    
+        
+        </form>
+    {% else %}
+        <h2>Access Denied!</h2>
+    {% endif %}
+    </div>
+
+{% endblock content %}
